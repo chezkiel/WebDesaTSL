@@ -1,0 +1,131 @@
+main {
+    padding-top: 40px;
+}
+
+body.home main {
+    padding-top: 0 !important;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+section[id] {
+  scroll-margin-top: 80px;
+}
+
+/* === Hero === */
+.hero {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-img {
+    height: 100vh;
+    object-fit: cover;
+    filter: brightness(80%);
+}
+
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(7, 1, 1, 0.5));
+    z-index: 1;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+/* Carousel controls */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(1);
+}
+
+/* Responsive hero */
+@media (max-width: 768px) {
+    .hero { height: 70vh; }
+    .hero-img { height: 70vh; }
+    .hero-text h1 { font-size: 1.8rem; }
+}
+
+/* ============================
+   NAVBAR — handled via body classes
+   ============================ */
+
+/* default navbar (fallback) */
+#navbar {
+    transition: background-color 0.4s ease, box-shadow 0.3s ease;
+}
+
+/* Beranda (home) default: transparent */
+body.home #navbar,
+#navbar.navbar-transparent {
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
+/* When scrolled on beranda */
+body.home.scrolled #navbar {
+    background-color: #b22222 !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* On pages that are NOT home, navbar should be solid immediately */
+body:not(.home) #navbar,
+#navbar.navbar-solid {
+    background-color: #b22222 !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* Nav link styles */
+#navbar .nav-link {
+    color: white !important;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+#navbar .nav-link:hover {
+    color: #ffe6e6 !important;
+    transform: translateY(-1px);
+}
+
+/* Toggler */
+.navbar-toggler {
+    border: 1px solid white;
+}
+.navbar-toggler-icon { filter: invert(1); }
+
+/* ============================
+   Branding colors
+   ============================ */
+.text-success { color: #b22222 !important; }
+
+.btn-success {
+    background-color: #b22222 !important;
+    border-color: #b22222 !important;
+}
+
+.btn-success:hover {
+    background-color: #8b0000 !important;
+}
